@@ -1,0 +1,48 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Roboto", sans-serif;
+  max-width: 400px;
+  margin: auto;
+  background-color: #f6f6f6;
+}
+
+body {
+  margin: 0;
+}
+
+.ad {
+  display: flex;
+}
+
+.ad__img {
+  margin: 1em auto;
+}
+
+.header {
+  background-color: #666;
+  color: #fff;
+}
+
+.navigation-list {
+  display: flex;
+  flex-wrap: nowrap;
+  list-style: none;
+  margin: 0;
+  padding: 1em 0.5em;
+}
+
+.navigation-list__item {
+  margin-right: 1em;
+  font-weight: 600;
+}
+
+.navigation-list__item:last-child {
+  margin-right: 0;
+}
+
+.content {
+  padding: 1em;
+}
