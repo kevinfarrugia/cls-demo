@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>CLS Demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      .preloader {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 9;
+        background-color: #d291bc;
+        font-family: sans-serif;
+        font-weight: 600;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        color: #fff;
+      }
+
+      #main {
+        visibility: hidden;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="preloader" class="preloader">
+      Fun fact #1: This is a splash screen.
+    </div>
+    <div id="ad" class="ad"></div>
+    <main id="main">
+      <header class="header">
+        <nav>
+          <ul class="navigation-list">
+            <li class="navigation-list__item">Home</li>
+            <li class="navigation-list__item">About</li>
+          </ul>
+        </nav>
+      </header>
+      <div class="content">
+        <p>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facilis
+          voluptatibus facere tempore, consequatur eum commodi blanditiis
+          laborum dignissimos eligendi unde cupiditate alias hic, nostrum minima
+          tempora rerum suscipit recusandae reprehenderit.
+        </p>
+        <img src="https://source.unsplash.com/random/300x300" />
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas libero
+          nihil accusantium dolor autem possimus inventore quasi explicabo
+          voluptatum placeat adipisci vero odio, ut modi et laborum beatae nemo
+          molestias nostrum saepe dignissimos laboriosam sapiente ullam? Eos
+          voluptate maiores nam reprehenderit ipsam! Illum dolore rem soluta
+          accusantium dolor reiciendis? At iusto corporis explicabo quis fugiat
+          aliquam, aliquid voluptatum nemo voluptas eveniet commodi suscipit
+          provident quibusdam, sint facere eum voluptatem tenetur nulla
+          veritatis, accusantium quam alias dolorum. Optio voluptatibus itaque
+          saepe officia animi veritatis dolorum nulla earum. Cum, reiciendis
+          accusantium blanditiis consectetur veritatis veniam fugiat et porro
+          nemo dolore maxime voluptas adipisci earum voluptatum dolor sit
+          aliquid libero. Quasi magni asperiores, dignissimos perferendis veniam
+          quis hic, incidunt amet ea vel laudantium provident perspiciatis
+          voluptas in aspernatur. Deleniti cumque recusandae illo voluptatum
+          nesciunt cupiditate veritatis pariatur, doloribus libero at dolore
+          natus expedita temporibus inventore neque aliquam porro iusto
+          voluptates voluptatem illum provident! Nihil vitae eaque
+          exercitationem eos, soluta vero voluptas nulla impedit est sunt quod a
+          modi omnis illum dolorem natus accusantium ut commodi maxime?
+          Molestias eum consequuntur laboriosam enim minus eius, distinctio nisi
+          aliquam. Atque quod labore eligendi quidem veniam vel! Iste asperiores
+          reiciendis consectetur magnam nostrum quam officia odit inventore?
+        </p>
+      </div>
+    </main>
+    <script>
+      // timeout to simulate fetching the personalised ad from third-party
+      setTimeout(() => {
+        const imgEl = document.createElement("img");
+        imgEl.src = "./img/ad.jpg";
+        imgEl.alt = "ad";
+        imgEl.width = "300";
+        imgEl.height = "100";
+        imgEl.classList.add("ad__img");
+
+        document.getElementById("ad").appendChild(imgEl);
+      }, 500);
+    </script>
+    <script>
+      // timeout to simulate when page has loaded all assets (fonts, images...etc)
+      // Note: if the image is not yet downloaded by the time the splash screen is removed, increase the timeout
+      setTimeout(() => {
+        document.getElementById("main").style.visibility = "visible";
+        document.getElementById("preloader").remove();
+      }, 2500);
+    </script>
+  </body>
+</html>
