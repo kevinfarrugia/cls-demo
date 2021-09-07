@@ -22,7 +22,7 @@
         display: none;
         position: fixed;
         left: 50%;
-        top: 50%;
+        top: 150%;
         width: calc(300px + 2em);
         max-height: calc(100vh - 2em);
         padding: 1em;
@@ -30,6 +30,7 @@
         background-color: #fff;
         box-shadow: 0 2px 24px 0 rgba(0, 0, 0, 0.15);
         transform: translate(-50%, -50%);
+        transition: top 200ms ease-in-out;
       }
     </style>
   </head>
@@ -86,9 +87,9 @@
         <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h2>
         <p>
           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Unde
-          quibusdam perspiciatis tempore mollitia culpa praesentium
-          aspernatur. Ea, aperiam quam et cum ipsam dignissimos sed laboriosam
-          rerum officia saepe, doloribus veritatis?
+          quibusdam perspiciatis tempore mollitia culpa praesentium aspernatur.
+          Ea, aperiam quam et cum ipsam dignissimos sed laboriosam rerum officia
+          saepe, doloribus veritatis?
         </p>
       </div>
     </main>
@@ -108,7 +109,10 @@
       const popup = document.querySelector(".popup");
 
       setTimeout(() => {
-        popup.style = "display: block";
+        popup.style = "display: block;";
+        setTimeout(() => {
+          popup.style = "display: block; top: 50%;";
+        });
       }, 2000);
     </script>
   </body>

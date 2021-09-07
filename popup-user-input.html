@@ -29,7 +29,8 @@
         overflow: auto;
         background-color: #fff;
         box-shadow: 0 2px 24px 0 rgba(0, 0, 0, 0.15);
-        transform: translate(-50%, -50%);
+        transform: translate(-50%, 100%);
+        transition: transform 200ms ease-in-out;
       }
     </style>
   </head>
@@ -51,6 +52,18 @@
           laborum dignissimos eligendi unde cupiditate alias hic, nostrum minima
           tempora rerum suscipit recusandae reprehenderit.
         </p>
+        <button
+          type="button"
+          onclick="(() => {
+            const popup = document.querySelector('.popup');
+            popup.style = 'display: block;';
+            setTimeout(() => {
+              popup.style = 'display: block; transform: translate(-50%, -50%);';
+            });
+          })()"
+        >
+          Click Me!
+        </button>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas libero
           nihil accusantium dolor autem possimus inventore quasi explicabo
@@ -86,9 +99,9 @@
         <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h2>
         <p>
           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Unde
-          quibusdam perspiciatis tempore mollitia culpa praesentium
-          aspernatur. Ea, aperiam quam et cum ipsam dignissimos sed laboriosam
-          rerum officia saepe, doloribus veritatis?
+          quibusdam perspiciatis tempore mollitia culpa praesentium aspernatur.
+          Ea, aperiam quam et cum ipsam dignissimos sed laboriosam rerum officia
+          saepe, doloribus veritatis?
         </p>
       </div>
     </main>
@@ -103,13 +116,6 @@
 
         document.getElementById("ad").appendChild(imgEl);
       }, 500);
-    </script>
-    <script>
-      const popup = document.querySelector(".popup");
-
-      setTimeout(() => {
-        popup.style = "display: block";
-      }, 2000);
     </script>
   </body>
 </html>
